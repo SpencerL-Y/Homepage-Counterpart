@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<meta charset="utf-8"/>
+<html>
+<title>Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./w3.css">
+<body>
+
+
+  
+ 
+<nav class="w3-sidenav  w3-black w3-card-6 w3-large" style="display:none; width:30%">
+  <a class="w3-large" href="javascript:void(0)" onclick="w3_close()" class="w3-closenav w3-large">Close &times;</a>
+  <a href="index.html">Home</a>		
+    <a href="about.html">About Me</a>	
+    <a href="download.html">Download</a>		
+    <a href="contact.html">Contact</a>		
+    <a href="http://blog.csdn.net/qq1024407215">CSDN Blog</a>
+    <a href="reading.html">Reading Material</a>
+  
+</nav>
+
+<div id="main">
+
+<header class="w3-container w3-black">
+  <span class="w3-opennav w3-xlarge" onclick="w3_open()">&#9776; Navigation</span>
+  <h1>Homepage of Xie-Clexma</h1>
+</header>
+
+
+
+<div class="w3-container">
+	<h1 class="w3-xlarge w3-text-red"> What This Website is About? </h1>
+    <p class="w3-large">
+    	This website is the homepage of me, I will put the relevant staffs onto this page (mainly about my study and work).  <br>
+		
+     </p>
+	<h1 class="w3-xlarge w3-text-red"> Clexma: Where it comes from? </h1>
+	<p class="w3-large">
+    	Since last decade, human tend to consider the inversion of the words that may introduce new meanings (Mistake). Clexma is a typical one. The inversion of "clexma" is "AMX ELC", which is a type of light tank in World of Tanks (A TPS Game that I have been playing since 2013). The rank of this tank is V, but it has a 90mm main gun that has great firepower. However, the weight of this tank is only 6.6 tons. Its image is shown below:
+        
+    
+    <br>
+
+    <a class="w3-large w3-btn" href="https://en.wikipedia.org/wiki/ELC_project"> More information from Wikipedia</a>
+	</p>
+    
+<img src="amxelc.jpg" class="w3-rounded" style="width:50%;padding:20px; alignment-adjust:central">
+
+	<p class="w3-large w3-text-red" style="padding:10px">
+    	Specification:
+    </p>
+	<table class="w3-striped w3-table w3-large w3-grey" style="padding-bottom:20px;">
+    <tr>
+        	<td>
+            	Name
+            </td>
+            <td>
+            	AMX ELC
+            </td>
+        </tr>
+    	<tr>
+        	<td>
+            	Type
+            </td>
+            <td>
+            	Light Tank
+            </td>
+        </tr>
+        <tr>
+        	<td>
+            	Place of origin
+            </td>
+            <td>
+            	France
+            </td>
+        </tr>
+        <tr>
+        	<td>
+            	Manufacture
+            </td>
+            <td>
+            	GIAT
+            </td>
+        </tr>
+        <tr>
+        	<td>
+            	Main
+            </td>
+            <td>
+            	1 X 90mm D915 cannon
+            </td>
+        </tr>
+        <tr>
+        	<td>
+            	Speed
+            </td>
+            <td>
+            	80 km/h
+            </td>
+        </tr>
+        <tr>
+        	<td>
+            	Number built
+
+            </td>
+            <td>
+            	10
+            </td>
+        </tr>
+    </table>
+	
+</div>
+
+
+<footer class="w3-container w3-black w3-fluid">
+ 
+  <p class="w3-center">Copyright © Clexma All Rights Reserved <a href="http://www.miibeian.gov.cn/">京ICP备16067786号-1</a>
+</p>
+</footer>
+
+</div>
+<script>
+function w3_open() {
+  document.getElementById("main").style.marginLeft = "25%";
+  document.getElementsByClassName("w3-sidenav")[0].style.width = "25%";
+  document.getElementsByClassName("w3-sidenav")[0].style.display = "block";
+  document.getElementsByClassName("w3-opennav")[0].style.display = 'none';
+}
+function w3_close() {
+  document.getElementById("main").style.marginLeft = "0%";
+  document.getElementsByClassName("w3-sidenav")[0].style.display = "none";
+  document.getElementsByClassName("w3-opennav")[0].style.display = "inline-block";
+}
+</script>
+</body>
+
+</html>  

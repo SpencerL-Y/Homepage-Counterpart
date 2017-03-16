@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<meta charset="utf-8"/>
+<html>
+<title>About Me</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./w3.css">
+<body>
+
+
+  
+ 
+<nav class="w3-sidenav  w3-black w3-card-6 w3-large" style="display:none; width:30%">
+    <a class="w3-large" href="javascript:void(0)" onclick="w3_close()" class="w3-closenav w3-large">Close &times;</a>
+    <a href="index.html">Home</a>		
+    <a href="about.html">About Me</a>	
+    <a href="download.html">Download</a>		
+    <a href="contact.html">Contact</a>		
+    <a href="http://blog.csdn.net/qq1024407215">CSDN Blog</a>
+    <a href="reading.html">Reading Material</a>
+   
+  
+</nav>
+
+<div id="main">
+
+	<header class="w3-container w3-black ">
+    	<span class="w3-opennav w3-xlarge" onclick="w3_open()">&#9776; Navigation</span>
+    	<h1>About Me</h1>
+    </header>
+
+
+
+	<div class="w3-container">
+	  <h1 class="w3-xlarge w3-text-red">My Information</h1>
+      <img src="me.jpg" class="w3-image w3-round " style="width:15%"/>
+      <h1 class="w3-xlarge w3-text-blue">Xie Li (李勰)</h1>
+		<p class="w3-large">
+        	
+        	I am an undergraduate studying in UCAS(University of China Academy of Sciences)， major in Computer Science and Technology. My research interests include automata theory, automata learning and model checking.<br>
+            In my daily life I prefer to play game and listen modern symphony to kill my time, or write some HTML  ,CSS and javaScript? (Of course)
+            My skills are rather poor, no better than a coding farmer, which is bad news for me.
+          <!--  Recently I am working on an edge detection project with Yuanhang Zhang. More information about edge detection, please <a class="w3-large w3-text-grey"1 href=""> click here </a>.<br>
+			I have implemented a small Gomoku AI based on <a class="w3-text-grey w3-large" href="#">piskvork</a> that has 4 depths search in C programming language class, the source code is <a class="w3-text-grey w3-large">here</a>. 
+			
+        -->
+        </p>
+
+
+
+
+  </div>
+
+
+	<footer class="w3-container w3-black w3-fluid">
+ 
+  		<p class="w3-center">Copyright © Clexma All Rights Reserved <a href="http://www.miibeian.gov.cn/">京ICP备16067786号-1</a>
+		</p>
+	</footer>
+
+</div>
+<script>
+	function w3_open() {
+    	document.getElementById("main").style.marginLeft = "25%";
+    	document.getElementsByClassName("w3-sidenav")[0].style.width = "25%";
+  		document.getElementsByClassName("w3-sidenav")[0].style.display = "block";
+  		document.getElementsByClassName("w3-opennav")[0].style.display = 'none';
+}
+	function w3_close() {
+  		document.getElementById("main").style.marginLeft = "0%";
+  		document.getElementsByClassName("w3-sidenav")[0].style.display = "none";
+  		document.getElementsByClassName("w3-opennav")[0].style.display = "inline-block";
+}
+</script>
+</body>
+
+</html>  

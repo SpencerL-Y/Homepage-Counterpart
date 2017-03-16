@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>userInterface</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" >
+
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-3.1.1.min.js"></script>
+
+<script src="plugins/ace-builds-master/src-noconflict/ace.js" type="text/javascript"></script>
+<style>
+	.marpad{
+		margin:10px;
+		padding:5px;
+	}
+	.mar{
+		margin:10px;
+	}
+	.pad{
+		padding:10px;
+	}
+	.largefont{
+		font-size:24px;
+	}
+	.midiumfont{
+		font-size:18px;
+	}
+	.state{
+		fill:white;
+		stroke:black;
+		stroke-width:2;
+	}
+	.transition{
+		stroke:black;
+		stroke-width:2;
+	}
+	.label{
+		font:"Times New Roman", Times, serif;
+		font-size:10px;
+	}
+</style>
+
+</head>
+
+
+<body>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-3.1.1.min.js"></script>
+
+
+
+<!-- The Navigation Bar with btns and dropdowns -->
+	
+	<nav class="navbar navbar-inverse">
+    	<div class="container-fluid">
+       	  <a class="navbar-brand" href="#">Website Name</a>
+            <ul class="nav navbar-nav">
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"  href="#">Drop<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+					<li><a href="#">link</a></li>
+     				<li><a href="#">link</a></li>
+					<li><a href="#">link</a></li>
+				</ul>
+            </li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Drop<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+					<li><a href="#">link</a></li>
+     				<li><a href="#">link</a></li>
+					<li><a href="#">link</a></li>
+				</ul>
+            </li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"  href="#">Drop<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+					<li><a href="#">link</a></li>
+     				<li><a href="#">link</a></li>
+					<li><a href="#">link</a></li>
+				</ul>
+            </li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"  href="#">Drop<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+					<li><a href="#">link</a></li>
+     				<li><a href="#">link</a></li>
+					<li><a href="#">link</a></li>
+				</ul>
+            </li>
+            <li class="pull-right"><a href="#">btn</a></li>
+            <li><a href="#">btn</a></li>
+            <li><a href="#">btn</a></li>
+            </ul>
+            
+            
+      </div>
+</nav>
+<!-- Tab to choose mode-->
+<div class="container-fluid text-center">
+
+       <ul class="nav nav-tabs">
+            <li class=" active" id="IM" onClick="IMActive()"><a href="#">Interactive Mode</a></li>
+            <li id="AM" onClick="AMActive();"><a href="#">Automatic Mode</a></li>
+       </ul>
+     
+   
+</div>
+<!--interactive mode-->
+<div id="interactive">
+	<div class="container">
+		<h2 class="marpad">Interactive Learning</h2>
+		<p class="marpad">Input the alphabet and take the role of teacher in learning.</p>
+	</div>
+	<div class="container">
+        <h3>Information for interactive learning :</h3>
+           
+                <div class="form-group">
+                <div class="row">
+                    <label class="col-md-2 control-label">Alphabet</label>
+                    <div class="col-md-10">
+                        
+						<input class="form-control" id="alphabet" type="text" >
+						<button id="submitAlpha" class="btn-block btn btn-primary" style="margin-top:10px;">Submit</button>
+                    </div>
+				</div>	
+                </div>
+			<h3>Interaction :</h3>
+            <div class="row">
+			<fieldset disabled>
+				<div class="form-group">
+					<label for="MemQuery" class="col-md-2 control-label">MembershipQuery</label>
+					<div class="col-md-10">
+						<input type="text" id="MemQuery" class="form-control" placeholder="MQ">
+					</div>
+				</div>
+			</fieldset>
+            </div>
+            <div class="row">
+			<div class="form-group">
+				<label class="col-md-2 control-label">Run Accepted?</label>
+				<div class="col-md-5">
+					<button class=" btn-block btn btn-primary" id="MQButtonY" style="margin-top:10px; margin-bottom:10px;">Yes</button>
+				</div>
+				<div class="col-md-5">
+					<button class=" btn-block btn btn-primary" id="MQButtonN" style="margin-top:10px; margin-bottom:10px;">No</button>
+				</div>
+			</div>
+			</div>
+			<div class="row">
+			<fieldset disabled>
+				<div class="form-group">
+					<label for="EQuery" class="col-md-2 control-label">EquivalenceQuery</label>
+					<div class="col-md-10">
+						<textarea type="text" id="EquiQuery" class="form-control" placeholder="EQ" rows="15"></textarea>
+					</div>
+				</div>
+			</fieldset>
+            </div>
+            <div class="row">
+			<div class="form-group">
+				<label class="col-md-2 control-label">Correct Result?</label>
+				<div class="col-md-5">
+					<button class=" btn-block btn btn-primary" id="EQButtonY" style="margin-top:10px; margin-bottom:10px;">Yes</button>
+				</div>
+				<div class="col-md-5">
+					<button class=" btn-block btn btn-primary" id="EQButtonN" style="margin-top:10px; margin-bottom:10px;">No</button>
+				</div>
+				
+			</div>
+			</div>
+  
+</div>
+
+    
+</div>
+
+<!--automatic mode-->
+<div id="automatic" hidden="hidden">
+	<div class="marpad">
+		<h2 class="marpad">Automatic Learning</h2>
+		<p class="marpad">Input your automata in BA format and the learning process will be executed automaticly. </p>
+	</div>
+	<div class="row">
+    	<div class="col-md-6">
+        	<div class="marpad" id="out"> 
+            	<label class="pad  midiumfont">Automata Input :</label>
+				<button class="btn pull-right btn-primary mar" style="width:30%;margin-bottom" id="autoRun">Run</button>
+					<pre id="editor" class="mar" style=" height:600px; "></pre>
+                    
+					
+    			
+            </div>
+        </div> 
+        <div class="col-md-6">
+        	<div class="marpad">
+			
+            	<label class="pad midiumfont">Result :</label>
+                <div>
+					<pre id="result" class="mar" style=" height:600px; ">result code</pre>
+                </div>
+            </div>
+        </div>
+    </div>	
+</div>
+<script src="automata1.js"></script>
+<script>
+"use strict";
+	
+	//effect for the navigation bar
+	function IMActive(){
+		document.getElementById('IM').className='active';
+		document.getElementById('AM').className='';
+		document.getElementById('automatic').hidden = "hidden";
+		document.getElementById('interactive').hidden = "";
+		
+	}
+	function AMActive(){
+		document.getElementById('AM').className='active';
+		document.getElementById('IM').className='';
+		document.getElementById('automatic').hidden = "";
+		document.getElementById('interactive').hidden = "hidden";
+		
+	}
+	//ace editor
+	var editor = ace.edit("editor");
+   	editor.setTheme("ace/theme/twilight");
+	
+	
+			
+			
+	
+</script>
+<script>
+"use strict";
+	var JSONdata={"MQ":"","EQ":""};// JSON object
+	// use post method to transfer the alphabet information
+	$(function(){
+			$("#submitAlpha").click(function(){
+					$.post("#.java",		          //use POST method to submit the alphabet to the server
+					$("#alphabet").text(),    	
+					//callback function        
+					function(data,textStatus){	          
+							JSONdata = JSON.parse(data);//parse JSON string
+							$("#MemQuery").html(JSONdata.MQ);//display Membership Query
+							$("#EquiQuery").html(JSONdata.EQ);//display Equivalence Query
+							$("#submitAlpha").addClass("disabled");//disable the submit btn
+							 
+							
+						}
+					);
+					
+				})
+		})
+	
+	$(function(){
+			$("#MQButtonY").click(function(){
+					$.post("#.java",
+					"MQY",
+					function(data,textStatus){
+							JSONdata = JSON.parse(data);
+							$("#MemQuery").html(JSONdata.MQ);
+							$("#EquiQuery").html(JSONdata.EQ);
+						});
+				})
+		})
+	
+	$(function(){
+			$("#MQButtonN").click(function(){
+					$.post("#.java",
+					"MQN",
+					function(data,textStatus){
+							JSONdata = JSON.parse(data);
+							$("#MemQuery").html(JSONdata.MQ);
+							$("#EquiQuery").html(JSONdata.EQ);
+						});
+				})
+		
+		})
+		
+	$(function(){
+			$("#EQButtonY").click(function(){
+					$.post("#.java",
+					"EQY",
+					function(data,textStatus){
+							JSONdata = JSON.parse(data);
+							$("#MemQuery").html(JSONdata.MQ);
+							$("#EquiQuery").html(JSONdata.EQ);
+						});
+						$("#submitAlpha").removeClass("disabled");//activate the submit button for another learning.
+					
+				})
+		
+		})
+		//automatic learning
+	$(function(){
+			$("#EQButtonN").click(function(){
+					$.post("#.java",
+					"EQN",
+					function(data,textStatus){
+						    JSONdata = JSON.parse(data);
+							$("#MemQuery").html(JSONdata.MQ);
+							$("#EquiQuery").html(JSONdata.EQ);
+						}
+					);
+				})
+			
+		})
+		
+		
+	$(function(){
+			$("#autoRun").click(function(){
+					$.post("#.java",
+							$("#editor").text(),
+							function(data,textStatus){
+									$("#result").html(data);
+									//return format: string
+								}
+					);
+					
+				})
+		})
+</script>
+<script src="plugins/ace-builds-master/src-noconflict/ace.js" type="text/javascript"></script>
+<script src="js/d3.js"></script>
+</body>
+
+</html>
